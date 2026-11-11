@@ -163,3 +163,18 @@ dialog h2 { font-size: 2.2rem; }
 @media (max-width: 760px) { .brand b { font-size: 1.2rem; } .brand img { height: 26px; width: 26px; } }
 .brand b { white-space: nowrap; }
 @media (max-width: 420px) { .brand b { font-size: 1.05rem; } .top nav a { padding: .4rem .55rem; font-size: .76rem; } .top { gap: .5rem; } }
+
+/* ===== HTS logo header ===== */
+.top { background: #fff; border-bottom: 3px solid var(--accent); padding-top: max(.6rem, env(safe-area-inset-top)); padding-bottom: .55rem; }
+.brand { flex-direction: column; align-items: flex-start; gap: 0; }
+.brand .mark { height: 40px; width: auto; display: block; margin-left: -6px; }
+.brand-name { display: block !important; border: 0 !important; padding: 0 !important; margin-top: 1px; font: 600 .6rem var(--sans) !important;
+  letter-spacing: .22em !important; text-transform: uppercase; color: var(--accent-dark) !important; white-space: nowrap; }
+.top nav a { color: var(--navy); opacity: .75; }
+.top nav a:hover { opacity: 1; color: var(--navy); }
+.top nav a.on { background: var(--navy); color: #fff; opacity: 1; }
+@media (max-width: 760px) { .brand .mark { height: 32px; } .brand-name { font-size: .5rem !important; letter-spacing: .14em !important; } }
+.brand { align-items: center; }
+.brand .mark { height: 52px; margin-left: 0; }
+.brand .mark path { stroke-width: 8.5; }
+@media (max-width: 760px) { .brand .mark { height: 40px; } }

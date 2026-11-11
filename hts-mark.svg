@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 130" fill="none" stroke="#14213d" stroke-linecap="round" stroke-linejoin="round">
+  <!-- H posts -->
+  <path d="M72 18 C 71 48 71 82 73 114" stroke-width="7"/>
+  <path d="M104 16 C 103 48 103 82 105 114" stroke-width="7"/>
+  <!-- T post, hanging from the bar -->
+  <path d="M146 40 C 145 66 145 92 147 114" stroke-width="7"/>
+  <!-- One stroke: loop in from the left, cross the H, become the T bar, flow into the S -->
+  <path d="M58 104 C 38 113 16 108 20 97 C 26 83 56 80 86 68 C 104 60 110 42 126 40 L 178 39
+           C 204 37 212 18 198 11 C 182 4 168 20 182 37 C 198 56 222 70 212 95 C 204 114 178 120 162 112" stroke-width="6.5"/>
+</svg>
