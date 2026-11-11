@@ -1,6 +1,7 @@
-/* Nestlewood Client Updates: tracks when each client's website is due for an update.
+/* Client Updates: tracks when each client's website is due for an update.
    Everything is saved in this browser (localStorage). Use Settings → Download backup to keep a copy. */
 
+// Storage name kept the same so existing saved clients are not lost.
 const KEY = "nestlewood-client-updates-v1";
 const DEFAULT_PLANS = [
   { id: "template", name: "Template", every: 30 },
@@ -279,7 +280,7 @@ function ics() {
   const ev = act.map((c) => ["BEGIN:VEVENT", `UID:${c.id}-${c.next}@nestlewood-updates`, `DTSTAMP:${stamp}`, `DTSTART;VALUE=DATE:${d(c.next)}`, `DTEND;VALUE=DATE:${d(addDays(c.next, 1))}`,
     `SUMMARY:${clean("Website update: " + c.name)}`, `DESCRIPTION:${clean(c.todo || "Website update due")}`,
     "BEGIN:VALARM", "TRIGGER:PT9H", "ACTION:DISPLAY", `DESCRIPTION:${clean("Website update: " + c.name)}`, "END:VALARM", "END:VEVENT"].join("\r\n"));
-  download("client-update-reminders.ics", ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Nestlewood//Client Updates//EN", "CALSCALE:GREGORIAN", ...ev, "END:VCALENDAR"].join("\r\n"), "text/calendar");
+  download("client-update-reminders.ics", ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Client Updates//EN", "CALSCALE:GREGORIAN", ...ev, "END:VCALENDAR"].join("\r\n"), "text/calendar");
   toast(`${act.length} reminders downloaded`);
 }
 function sample() {
@@ -317,5 +318,5 @@ document.addEventListener("visibilitychange", () => { if (!document.hidden && !m
 /* Friendly pop-up while the app is open in Chrome */
 if ("Notification" in window && Notification.permission === "granted") {
   const n = inBucket("overdue").length + inBucket("today").length;
-  if (n) new Notification("Website updates due", { body: `${n} client${n === 1 ? "" : "s"} need an update today.`, icon: "tree-icon.png" });
+  if (n) new Notification("Website updates due", { body: `${n} client${n === 1 ? "" : "s"} need an update today.`, icon: "icon.png" });
 }
